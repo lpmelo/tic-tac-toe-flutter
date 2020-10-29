@@ -4,12 +4,12 @@ Jogo da velha (Tic Tac Toe) criado para disciplina de Programação Mobile, cria
 Tutorial de criação deste app: [clique aqui](https://medium.com/@kleberandrade/criando-um-jogo-da-velha-em-flutter-50347537c926)
 
 <p align="center">
-    <img src="assets/images/Tela 1.jpeg" width="250"/>
-    <img src="assets/images/Tela 2.jpeg" width="250"/>
-    <img src="assets/images/Tela 3.jpeg" width="250"/>
-    <img src="assets/images/Tela 4.jpeg" width="250"/>
-    <img src="assets/images/Tela 5.jpeg" width="250"/>
-    <img src="assets/images/Tela 6.jpeg" width="250"/>
+    <img src="assets/images/Tela1.jpeg" width="250"/>
+    <img src="assets/images/Tela2.jpeg" width="250"/>
+    <img src="assets/images/Tela3.jpeg" width="250"/>
+    <img src="assets/images/Tela4.jpeg" width="250"/>
+    <img src="assets/images/Tela5.jpeg" width="250"/>
+    <img src="assets/images/Tela6.jpeg" width="250"/>
 </p>
 
 ## Desafio para aula
