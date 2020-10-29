@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:tictactoe/core/constants.dart';
 import 'package:tictactoe/core/winner_rules.dart';
 import 'package:tictactoe/enums/player_type.dart';
@@ -12,6 +11,9 @@ class GameController {
   List<int> movesPlayer2 = [];
   PlayerType currentPlayer;
   bool isSinglePlayer;
+  String name;
+  int wp1 = 0;
+  int wp2 = 0;
 
   bool get hasMoves =>
       (movesPlayer1.length + movesPlayer2.length) != BOARD_SIZE;
@@ -49,6 +51,7 @@ class GameController {
     tile.color = PLAYER1_COLOR;
     movesPlayer1.add(tile.id);
     currentPlayer = PlayerType.player2;
+    name = 'Player 1';
   }
 
   void _markBoardTileWithPlayer2(BoardTile tile) {
@@ -56,6 +59,7 @@ class GameController {
     tile.color = PLAYER2_COLOR;
     movesPlayer2.add(tile.id);
     currentPlayer = PlayerType.player1;
+    name = 'Player 2';
   }
 
   bool _checkPlayerWinner(List<int> moves) {
@@ -66,8 +70,14 @@ class GameController {
   }
 
   WinnerType checkWinner() {
-    if (_checkPlayerWinner(movesPlayer1)) return WinnerType.player1;
-    if (_checkPlayerWinner(movesPlayer2)) return WinnerType.player2;
+    if (_checkPlayerWinner(movesPlayer1)) {
+      wp1++;
+      return WinnerType.player1;
+    }
+    if (_checkPlayerWinner(movesPlayer2)) {
+      wp2++;
+      return WinnerType.player2;
+    }
     return WinnerType.none;
   }
 

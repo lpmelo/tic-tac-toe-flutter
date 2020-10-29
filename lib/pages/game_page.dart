@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 import 'package:tictactoe/controllers/game_controller.dart';
 import 'package:tictactoe/core/constants.dart';
 import 'package:tictactoe/enums/player_type.dart';
@@ -35,6 +36,11 @@ class _GamePageState extends State<GamePage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildBoard(),
+          _buildVerticalSpace(height: 10),
+          _buildCurrentPlayer(_controller.name),
+          _buildCurrentScore(
+              _controller.wp1.toString(), _controller.wp2.toString()),
+          _buildShareButton(),
           _buildPlayerMode(),
           _buildResetButton(),
         ],
@@ -65,18 +71,74 @@ class _GamePageState extends State<GamePage> {
     );
   }
 
+  _buildPlayerMode() {
+    return SwitchListTile(
+      title: Text(_controller.isSinglePlayer ? 'SinglePlayer' : 'MultiPlayer'),
+      secondary: Icon(_controller.isSinglePlayer ? Icons.person : Icons.group),
+      value: _controller.isSinglePlayer,
+      onChanged: (value) {
+        setState(() {
+          _controller.isSinglePlayer = value;
+        });
+      },
+    );
+  }
+
+  _buildCurrentPlayer(String player) {
+    if (player == null) {
+      player = 'Ninguém';
+    }
+    return Container(
+      color: Theme.of(context).accentColor.withOpacity(0.2),
+      height: 40,
+      child: Center(
+        child: Text(
+          'Jogando agora: $player',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
+  _buildCurrentScore(String scorePlayer1, String scorePlayer2) {
+    return Container(
+      color: Theme.of(context).accentColor.withOpacity(0.2),
+      height: 40,
+      child: Center(
+        child: Text(
+          'Player 1: $scorePlayer1   X   Player 2: $scorePlayer2',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
+  _buildVerticalSpace({double height = 20.0}) {
+    return SizedBox(height: height);
+  }
+
+  _buildShareButton() {
+    return RaisedButton(
+      padding: const EdgeInsets.all(20),
+      child: Text(SHARE_BUTTON_LABEL),
+      onPressed: _onShare,
+    );
+  }
+
   Widget _buildTile(context, index) {
     return GestureDetector(
       onTap: () => _onMarkTile(index),
       child: Container(
         color: _controller.tiles[index].color,
         child: Center(
-          child: Text(
+          child: Image.asset(
             _controller.tiles[index].symbol,
-            style: TextStyle(
-              fontSize: 72.0,
-              color: Colors.white,
-            ),
           ),
         ),
       ),
@@ -87,6 +149,11 @@ class _GamePageState extends State<GamePage> {
     setState(() {
       _controller.reset();
     });
+  }
+
+  _onShare() {
+    Share.share(
+        'See my project on Github - https://github.com/lpmelo/tic-tac-toe-flutter');
   }
 
   _onMarkTile(index) {
@@ -110,8 +177,7 @@ class _GamePageState extends State<GamePage> {
         _onMarkTile(index);
       }
     } else {
-      String symbol =
-          winner == WinnerType.player1 ? PLAYER1_SYMBOL : PLAYER2_SYMBOL;
+      String symbol = winner == WinnerType.player1 ? 'Player 1' : 'Player 2';
       _showWinnerDialog(symbol);
     }
   }
@@ -140,19 +206,6 @@ class _GamePageState extends State<GamePage> {
           message: DIALOG_MESSAGE,
           onPressed: _onResetGame,
         );
-      },
-    );
-  }
-
-  _buildPlayerMode() {
-    return SwitchListTile(
-      title: Text(_controller.isSinglePlayer ? 'Single Player' : 'Two Players'),
-      secondary: Icon(_controller.isSinglePlayer ? Icons.person : Icons.group),
-      value: _controller.isSinglePlayer,
-      onChanged: (value) {
-        setState(() {
-          _controller.isSinglePlayer = value;
-        });
       },
     );
   }
