@@ -1,30 +1,24 @@
 # Tic Tac Toe
 
-Jogo da velha (Tic Tac Toe) criado para disciplina de Programação Mobile, criado por Kleber de Oliveira Andrade
-
+Jogo da velha (Tic Tac Toe) criado para disciplina de Programação Mobile, criado por Kleber de Oliveira Andrade. Desafios resolvidos por Lucas Pereira Melo
 Tutorial de criação deste app: [clique aqui](https://medium.com/@kleberandrade/criando-um-jogo-da-velha-em-flutter-50347537c926)
 
 <p align="center">
-    <img src="https://miro.medium.com/max/334/1*mEhyVlhIPQ3ccv9piPEdrw.png" width="250"/>
-    <img src="https://miro.medium.com/max/334/1*mqMhhPAmNoY_ch1AAvJgeg.png" width="250"/>
-    <img src="https://miro.medium.com/max/334/1*IXXSxfLfRDKCXw_QKw5yvQ.png" width="250"/>
+    <img src="assets/images/Tela 1.jpeg" width="250"/>
+    <img src="assets/images/Tela 2.jpeg" width="250"/>
+    <img src="assets/images/Tela 3.jpeg" width="250"/>
+    <img src="assets/images/Tela 4.jpeg" width="250"/>
+    <img src="assets/images/Tela 5.jpeg" width="250"/>
+    <img src="assets/images/Tela 6.jpeg" width="250"/>
 </p>
-
-## Como clonar o projeto
-
-*   Faça um fork do projeto (precisa ter uma conta no github)
-*   Abra o terminal do Visual Studio Code
-*   Acesse a pasta onde deseja salvar o aplicativo e digite: git clone *link_do_projeto_no_seu_github* **tictactoe**
-*   Clique em File --> Open e abra o projeto
-*   Não se esqueça de abrir o arquivo *pubspec.yaml* e salvar (CTRL + S) o arquivo para que os plugins sejam baixados 
 
 ## Desafio para aula
 
-*   [ ] Exibir o jogador da vez (Turno do X ou Turno do Y); Pode usar um Text para isso.
-*   [ ] Criar um placar de vitórias para cada jogador; Pode usar Text também
-*   [ ] Criar uma splash screen para o aplicativo; Utilize o [plugin custom_splash](https://pub.dev/packages/custom_splash).
-*   [ ] Adicionar um botão para compartilhar o aplicativo. Utilize o [plugin Share](https://pub.dev/packages/share).
-*   [ ] Trocar o X e Y por duas imagens (exemplo: Finn e Jake de Adventure Time) — como [utilizar imagens](https://flutter.dev/docs/development/ui/assets-and-images). Entendendo como colocar [imagens em um Container](https://medium.com/flutteropen/flutter-widgets-03-image-558e2b24059e).
+*   [x] Exibir o jogador da vez (Turno do X ou Turno do Y); Pode usar um Text para isso.
+*   [x] Criar um placar de vitórias para cada jogador; Pode usar Text também
+*   [x] Criar uma splash screen para o aplicativo; Utilize o [plugin custom_splash](https://pub.dev/packages/custom_splash).
+*   [x] Adicionar um botão para compartilhar o aplicativo. Utilize o [plugin Share](https://pub.dev/packages/share).
+*   [x] Trocar o X e Y por duas imagens (exemplo: Finn e Jake de Adventure Time) — como [utilizar imagens](https://flutter.dev/docs/development/ui/assets-and-images). Entendendo como colocar [imagens em um Container](https://medium.com/flutteropen/flutter-widgets-03-image-558e2b24059e).
 
 ## Licença
 

@@ -23,7 +23,7 @@ void main() {
 
   runApp(MaterialApp(
     home: CustomSplash(
-      imagePath: 'assets/images/razor.png',
+      imagePath: 'assets/images/logo.jpg',
       backGroundColor: Colors.green,
       animationEffect: 'zoom-in',
       home: MyApp(),
